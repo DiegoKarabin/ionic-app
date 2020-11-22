@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>new-grocery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-input placeholder="Grocery name" type="text" #name></ion-input>
+          <!-- <ion-input placeholder="http://imagewebsite.com" #imageURL></ion-input> -->
+     
+          <ion-input placeholder="Quantity" type="number"  #quantity></ion-input>
+          <ion-input placeholder="Price" type="number"  #price></ion-input>
+          <ion-button color="primary" (click)="addNewGrocery(name,quantity,price)">
+            Save
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

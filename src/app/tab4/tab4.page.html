@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Groceries</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let grocery of grocerys" >
+      <ion-item>  
+       {{grocery.name}}          |          Quantity: {{grocery.quantity}}              |         Price: {{grocery.price}}
+
+       
+
+       <ion-button color="primary" (click)="navigateGroceryEdit(grocery)" slot="end">
+        <ion-icon name="create"></ion-icon>
+        Edit
+      </ion-button>
+      <ion-button color="danger" (click)="deleteGrocery(grocery)" slot="end">
+        <ion-icon name="trash"></ion-icon>
+        Delete
+      </ion-button>
+     
+      </ion-item>
+    
+
+      <!-- <ion-item-options>
+
+        <ion-buttons>
+          <ion-button color="primary" (click)="navigateGroceryEdit(grocery)">
+            <ion-icon name="create"></ion-icon>
+            Edit
+          </ion-button>
+          <ion-button color="danger" (click)="deleteGrocery(grocery)">
+            <ion-icon name="trash"></ion-icon>
+            Delete
+          </ion-button>
+
+      
+        </ion-buttons>
+
+      </ion-item-options> -->
+
+
+    </ion-item-sliding>
+
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="navigateGrocery()" >
+      <ion-icon name="add">
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

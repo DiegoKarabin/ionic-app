@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>edit-grocery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content *ngIf="grocery">
+          <h1>{{grocery.name}}</h1>
+          <!-- <ion-input disabled placeholder="Grocery name" type="text" value="{{grocery.name}}"></ion-input> -->
+          <!-- <ion-input placeholder="http://imagewebsite.com" #imageURL></ion-input> -->
+          <br>
+          <ionItemDivider>Quantity</ionItemDivider>
+          <ion-input placeholder="Quantity" type="number" value="{{grocery.quantity}}"  #quantity></ion-input>
+          <ionItemDivider>Price</ionItemDivider>
+          <ion-input placeholder="Price" type="number" value="{{grocery.price}}" #price></ion-input>
+          <ion-button color="primary" (click)="editGrocery(grocery.name,quantity.value,price.value)">
+            Save
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
